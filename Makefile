@@ -14,6 +14,8 @@ BUILDOBJS = $(BUILDIR)main.o $(BUILDIR)debug.o $(BUILDIR)tool.o $(BUILDIR)code_i
 DEBUG =-g
 all: ft_ping
 ft_ping: $(BUILDIR)  $(LIBFT) $(BUILDOBJS) $(INCH)
+	git submodule init
+	git submodule update
 	make -C ./libft/
 	$(CC) $(CFLAGS) -I$(INC) -I$(LIBFTH) -o ft_ping $(BUILDOBJS) $(LIBFT)
 
